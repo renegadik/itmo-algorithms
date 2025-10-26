@@ -58,7 +58,7 @@ public:
 
     int Peek() const {
         if (Empty()) {
-            std::cerr << "underflow" << std::endl;
+            std::cerr << "empty" << std::endl;
             return -1;
         }
         return data[top - 1];
