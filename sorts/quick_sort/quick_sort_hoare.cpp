@@ -7,13 +7,11 @@ int Partition(int* arr, int left, int right) {
     int j = right;
 
     while (i <= j) {
-        while (arr[i] < pivot) {
+        while (arr[i] < pivot) 
             i++;
-
-        }
-        while (arr[j] > pivot) {
+        
+        while (arr[j] > pivot) 
             j--;
-        }
 
         if (i <= j) {
             std::swap(arr[i], arr[j]);
@@ -26,12 +24,9 @@ int Partition(int* arr, int left, int right) {
 }
 
 void QuickSort(int* arr, int left, int right) {
-    if (left >= right) {
-        return;
-    }
+    if (left >= right) return;
 
     int pivot = Partition(arr, left, right);
-
     QuickSort(arr, left, pivot);
     QuickSort(arr, pivot + 1, right);
 }

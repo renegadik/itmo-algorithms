@@ -16,12 +16,9 @@ int Partition(int* arr, int left, int right) {
 }
 
 void QuickSort(int* arr, int left, int right) {
-    if (left >= right) {
-        return;
-    }
+    if (left >= right) return;
 
     int pivot = Partition(arr, left, right);
-
     QuickSort(arr, left, pivot - 1);
     QuickSort(arr, pivot + 1, right);
 }

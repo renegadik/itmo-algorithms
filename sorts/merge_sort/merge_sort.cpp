@@ -13,26 +13,21 @@ void Merge(int* arr, int left, int pivot, int right) {
         }
     }
 
-    while (left + it1 < pivot) {
+    while (left + it1 < pivot) 
         result[res_idx++] = arr[left + it1++];
-    }
-
-    while (pivot + it2 < right) {
+    
+    while (pivot + it2 < right) 
         result[res_idx++] = arr[pivot + it2++];
-    }
-
-    for (int i = 0; i < right - left; i++) {
+    
+    for (int i = 0; i < right - left; i++) 
         arr[left + i] = result[i];
-    }
-
+    
     delete[] result;
 }
 
 void MergeSort(int* arr, int left, int right) {
-    if (left + 1 >= right) {
-        return;
-    }
-
+    if (right - left <= 1) return;
+    
     int pivot = left + (right - left) / 2;
     MergeSort(arr, left, pivot);
     MergeSort(arr, pivot, right);
@@ -40,4 +35,4 @@ void MergeSort(int* arr, int left, int right) {
     Merge(arr, left, pivot, right);
 }
 
-// MergeSort(arr, 0, size)
+// MergeSort(arr, 0, size);

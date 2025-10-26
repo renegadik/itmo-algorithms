@@ -10,4 +10,4 @@ void InsertionSort(int* arr, int size) {
     }
 }
 
-// InsertionSort(arr, size)
+// InsertionSort(arr, size);
