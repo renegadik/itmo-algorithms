@@ -7,6 +7,16 @@ private:
     int size;
     int capacity;
 
+    void Resize(int new_capacity) {
+        int* new_data = new int[new_capacity];
+        for (int i = 0; i < size; i++)
+            new_data[i] = data[i];
+
+        delete[] data;
+        data = new_data;
+        capacity = new_capacity;
+    }
+
     void SiftUp(int index) {
         while (index > 0) {
             int parent = (index - 1) / 2;
@@ -39,16 +49,6 @@ private:
         }
     }
 
-    void Resize(int new_capacity) {
-        int* new_data = new int[new_capacity];
-        for (int i = 0; i < size; i++)
-            new_data[i] = data[i];
-
-        delete[] data;
-        data = new_data;
-        capacity = new_capacity;
-    }
-
 public:
     Heap(int cap = 16) {
         capacity = cap;
@@ -58,6 +58,19 @@ public:
 
     ~Heap() {
         delete[] data;
+    }
+
+    bool Empty() {
+        return size == 0
+    }
+
+    int Size() {
+        return size;
+    }
+
+    int Top() {
+        if (Empty()) return -1;
+        return data[0];
     }
 
     void Insert(int value) {
@@ -70,9 +83,7 @@ public:
     }
 
     int ExtractMin() {
-        if (size == 0) {
-            return -1;
-        }
+        if (Empty()) return -1;
 
         int min = data[0];
         std::swap(data[0], data[--size]);
@@ -105,7 +116,7 @@ public:
     }
 
     void Print() {
-        if (size == 0) {
+        if (Empty()) {
             std::cout << "empty" << std::endl;
             return;
         }
