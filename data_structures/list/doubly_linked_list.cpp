@@ -109,6 +109,22 @@ public:
         return true;
     }
 
+    Node* Head() {
+        if (head == nullptr) {
+            std::cout << "zero elements" << std::endl;
+            return -1;
+        }
+        return head;
+    }
+
+    Node* Tail() {
+        if (head == nullptr) {
+            std::cout << "zero elements" << std::endl;
+            return -1;
+        }
+        return tail;
+    }
+
     Node* Find(int value) {
         Node* cur = head;
         while (cur != nullptr) {
@@ -169,7 +185,7 @@ public:
 
         if (pos == head) 
             head = n;
-            
+
         size++;
         return n;
     }

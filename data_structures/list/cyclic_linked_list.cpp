@@ -1,6 +1,6 @@
 #include <iostream>
 
-class CyclicDoublyLinkedList {
+class CyclicLinkedList {
 private:
     struct Node {
         int value;
@@ -12,12 +12,12 @@ private:
     int size;
 
 public:
-    CyclicDoublyLinkedList() {
+    CyclicLinkedList() {
         head = nullptr;
         size = 0;
     }
 
-    ~CyclicDoublyLinkedList() {
+    ~CyclicLinkedList() {
         Clear();
     }
 

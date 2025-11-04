@@ -28,6 +28,14 @@ public:
         return size;
     }
 
+    Node* Head() {
+        if (head == nullptr) {
+            std::cout << "zero elements" << std::endl;
+            return -1;
+        }
+        return head;
+    }
+
     void PushFront(int value) {
         Node* n = new Node;
         n->value = value;
