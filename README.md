@@ -1,3 +1,10 @@
+## Data Structures
+
+- [Binary Heap](https://neerc.ifmo.ru/wiki/index.php?title=Двоичная_куча) — `data_structures/binary_heap/`
+- [Stack](https://neerc.ifmo.ru/wiki/index.php?title=Стек) — `data_structures/stack/`
+- [Queue](https://neerc.ifmo.ru/wiki/index.php?title=Очередь) — `data_structures/queue/`
+- [List](https://neerc.ifmo.ru/wiki/index.php?title=Список) — `data_structures/list/`
+
 ## Sorts
 
 ### O(n)
@@ -16,10 +23,6 @@
 ### O(n²)
 - [Insertion sort](https://neerc.ifmo.ru/wiki/index.php?title=Сортировка_вставками) — `sorts/insertion_sort/`
 
+## Dynamic Programming
 
-## Data Structures
-
-- [Binary Heap](https://neerc.ifmo.ru/wiki/index.php?title=Двоичная_куча) — `data_structures/binary_heap/`
-- [Stack](https://neerc.ifmo.ru/wiki/index.php?title=Стек) — `data_structures/stack/`
-- [Queue](https://neerc.ifmo.ru/wiki/index.php?title=Очередь) — `data_structures/queue/`
-- [List](https://neerc.ifmo.ru/wiki/index.php?title=Список) — `data_structures/list/`
+- [Knapsack](https://neerc.ifmo.ru/wiki/index.php?title=Задача_о_рюкзаке) — `dynamic_programming/knapsack/`
