@@ -21,4 +21,4 @@
 
 - [Binary Heap](https://neerc.ifmo.ru/wiki/index.php?title=Двоичная_куча) — `data_structures/binary_heap/`
 - [Stack](https://neerc.ifmo.ru/wiki/index.php?title=Стек) — `data_structures/stack/`
-- [Queue](https://neerc.ifmo.ru/wiki/index.php?title=Очередь) — `data_structures/queue/`
+- [List](https://neerc.ifmo.ru/wiki/index.php?title=Список) — `data_structures/list/`
