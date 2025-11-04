@@ -15,7 +15,7 @@ int main() {
 
     std::vector<std::vector<int>> dp(N + 1, std::vector<int>(W + 1, 0));
 
-    // create table
+    // dp fill
 
     // dp(k, s) = max(dp(k - 1, s), dp(k - 1, s - wk) + pk)
     for (int k = 1; k <= N; k++) {
