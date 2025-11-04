@@ -26,3 +26,4 @@
 ## Dynamic Programming
 
 - [Knapsack](https://neerc.ifmo.ru/wiki/index.php?title=Задача_о_рюкзаке) — `dynamic_programming/knapsack/`
+- [Grasshopper](https://www.geeksforgeeks.org/dsa/count-ways-reach-nth-stair/) — `dynamic_programming/grasshopper/`
