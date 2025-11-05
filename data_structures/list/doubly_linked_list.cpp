@@ -112,7 +112,7 @@ public:
     Node* Head() {
         if (head == nullptr) {
             std::cout << "zero elements" << std::endl;
-            return -1;
+            return nullptr;
         }
         return head;
     }
@@ -120,7 +120,7 @@ public:
     Node* Tail() {
         if (head == nullptr) {
             std::cout << "zero elements" << std::endl;
-            return -1;
+            return nullptr;
         }
         return tail;
     }

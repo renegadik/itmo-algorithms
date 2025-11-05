@@ -61,7 +61,7 @@ public:
     }
 
     bool Empty() {
-        return size == 0
+        return size == 0;
     }
 
     int Size() {
@@ -138,4 +138,4 @@ public:
         }
         std::cout << std::endl;
     }
-}
+};
