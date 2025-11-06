@@ -8,7 +8,7 @@ private:
     int tail;
     int capacity;
 
-    void Resize(int new_capacity) {
+    void resize(int new_capacity) {
         int* new_data = new int[new_capacity];
 
         for (int i = 0; i < count; i++) {
@@ -34,25 +34,25 @@ public:
         delete[] data;
     }
 
-    bool Empty() const {
+    bool is_empty() const {
         return count == 0;
     }
 
-    int Size() const {
+    int get_size() const {
         return count;
     }
 
-    void Push(int value) {
+    void push(int value) {
         if (count == capacity) {
-            Resize(capacity * 2);
+            resize(capacity * 2);
         }
         data[tail] = value;
         tail = (tail + 1) % capacity;
         count++;
     }
 
-    int Pop() {
-        if (Empty()) {
+    int pop() {
+        if (is_empty()) {
             std::cerr << "underflow" << std::endl;
             return -1;
         }
@@ -61,14 +61,14 @@ public:
         count--;
 
         if (count > 0 && count < capacity / 4) {
-            Resize(capacity / 2);
+            resize(capacity / 2);
         }
 
         return result;
     }
 
-    int Head() const {
-        if (Empty()) {
+    int get_head() const {
+        if (is_empty()) {
             std::cerr << "empty" << std::endl;
             return -1;
         }

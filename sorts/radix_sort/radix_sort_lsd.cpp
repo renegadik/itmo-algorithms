@@ -1,4 +1,4 @@
-void RadixSort(int* arr, int size) {
+void radix_sort(int* arr, int size) {
     if (size <= 1) return;
 
     int max_val = arr[0];
@@ -41,4 +41,4 @@ void RadixSort(int* arr, int size) {
     delete[] buffer;
 }
 
-// RadixSort(arr, size);
+// radix_sort(arr, size);

@@ -1,6 +1,6 @@
 #include <vector>
 
-int lower_bound(const vector<int> &v, int value) {
+int LowerBound(const vector<int> &v, int value) {
     int left = 0;
     int right = v.size();
     while (left < right) {

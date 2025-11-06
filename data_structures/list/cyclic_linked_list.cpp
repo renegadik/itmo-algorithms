@@ -18,22 +18,22 @@ public:
     }
 
     ~CyclicLinkedList() {
-        Clear();
+        clear();
     }
 
-    bool Empty() {
+    bool is_empty() {
         return size == 0;
     }
 
-    int Size() {
+    int get_size() {
         return size;
     }
 
-    void PushFront(int value) {
+    void push_front(int value) {
         Node* n = new Node;
         n->value = value;
 
-        if (Empty()) {
+        if (is_empty()) {
             n->next = n;
             n->prev = n;
             head = n;
@@ -52,9 +52,9 @@ public:
         size++;
     }
 
-    void PushBack(int value) {
-        if (Empty()) {
-            PushFront(value);
+    void push_back(int value) {
+        if (is_empty()) {
+            push_front(value);
             return;
         }
 
@@ -72,8 +72,8 @@ public:
         size++;
     }
 
-    bool PopFront() {
-        if (Empty()) return false;
+    bool pop_front() {
+        if (is_empty()) return false;
 
         Node* t = head;
 
@@ -92,10 +92,10 @@ public:
         return true;
     }
 
-    bool PopBack() {
-        if (Empty()) return false;
+    bool pop_back() {
+        if (is_empty()) return false;
 
-        if (size == 1) return PopFront();
+        if (size == 1) return pop_front();
 
         Node* tail = head->prev;
         Node* new_tail = tail->prev;
@@ -108,8 +108,8 @@ public:
         return true;
     }
 
-    Node* Find(int value) {
-        if (Empty()) return nullptr;
+    Node* find(int value) {
+        if (is_empty()) return nullptr;
 
         Node* cur = head;
         do {
@@ -120,8 +120,8 @@ public:
         return nullptr;
     }
 
-    bool Remove(int value) {
-        Node* node = Find(value);
+    bool remove(int value) {
+        Node* node = find(value);
         if (node == nullptr) return false;
 
         if (size == 1) {
@@ -132,7 +132,7 @@ public:
         }
 
         if (node == head) {
-            return PopFront();
+            return pop_front();
         }
 
         Node* prev = node->prev;
@@ -146,8 +146,8 @@ public:
         return true;
     }
 
-    void Clear() {
-        if (Empty()) return;
+    void clear() {
+        if (is_empty()) return;
 
         Node* cur = head;
         for (int i = 0; i < size; i++) {
@@ -160,8 +160,8 @@ public:
         size = 0;
     }
 
-    void PrintForward() {
-        if (Empty()) {
+    void print_forward() {
+        if (is_empty()) {
             std::cout << "empty" << std::endl;
             return;
         }
@@ -174,8 +174,8 @@ public:
         std::cout << std::endl;
     }
 
-    void PrintBackward() {
-        if (Empty()) {
+    void print_backward() {
+        if (is_empty()) {
             std::cout << "empty" << std::endl;
             return;
         }

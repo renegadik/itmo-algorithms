@@ -1,4 +1,4 @@
-void Merge(int* arr, int left, int pivot, int right) {
+void merge(int* arr, int left, int pivot, int right) {
     int it1 = 0;
     int it2 = 0;
 
@@ -25,14 +25,14 @@ void Merge(int* arr, int left, int pivot, int right) {
     delete[] result;
 }
 
-void MergeSort(int* arr, int left, int right) {
+void merge_sort(int* arr, int left, int right) {
     if (right - left <= 1) return;
     
     int pivot = left + (right - left) / 2;
-    MergeSort(arr, left, pivot);
-    MergeSort(arr, pivot, right);
+    merge_sort(arr, left, pivot);
+    merge_sort(arr, pivot, right);
 
-    Merge(arr, left, pivot, right);
+    merge(arr, left, pivot, right);
 }
 
-// MergeSort(arr, 0, size);
+// merge_sort(arr, 0, size);

@@ -12,7 +12,7 @@ private:
     Node* tail;
     int size;
 
-    void RemoveNode(Node* node) {
+    void remove_node(Node* node) {
         if (node == nullptr) return;
 
         if (node->prev != nullptr) 
@@ -37,18 +37,18 @@ public:
     }
 
     ~DoublyLinkedList() {
-        Clear();
+        clear();
     }
 
-    bool Empty() {
+    bool is_empty() {
         return size == 0;
     }
 
-    int Size() {
+    int get_size() {
         return size;
     }
 
-    void PushFront(int value) {
+    void push_front(int value) {
         Node* n = new Node;
         n->value = value;
         n->prev = nullptr;
@@ -63,7 +63,7 @@ public:
         size++;
     }
 
-    void PushBack(int value) {
+    void push_back(int value) {
         Node* n = new Node;
         n->value = value;
         n->next = nullptr;
@@ -78,8 +78,8 @@ public:
         size++;
     }
 
-    bool PopFront() {
-        if (Empty()) return false;
+    bool pop_front() {
+        if (is_empty()) return false;
 
         Node* t = head;
         head = head->next;
@@ -93,8 +93,8 @@ public:
         return true;
     }
 
-    bool PopBack() {
-        if (Empty()) return false;
+    bool pop_back() {
+        if (is_empty()) return false;
 
         Node* t = tail;
         tail = tail->prev;
@@ -109,7 +109,7 @@ public:
         return true;
     }
 
-    Node* Head() {
+    Node* get_head() {
         if (head == nullptr) {
             std::cout << "zero elements" << std::endl;
             return nullptr;
@@ -117,7 +117,7 @@ public:
         return head;
     }
 
-    Node* Tail() {
+    Node* get_tail() {
         if (head == nullptr) {
             std::cout << "zero elements" << std::endl;
             return nullptr;
@@ -125,7 +125,7 @@ public:
         return tail;
     }
 
-    Node* Find(int value) {
+    Node* find(int value) {
         Node* cur = head;
         while (cur != nullptr) {
             if (cur->value == value) 
@@ -135,18 +135,18 @@ public:
         return nullptr;
     }
 
-    bool Remove(int value) {
-        Node* node = Find(value);
+    bool remove(int value) {
+        Node* node = find(value);
         if (node == nullptr) 
             return false;
 
-        RemoveNode(node);
+        remove_node(node);
         return true;
     }
 
-    Node* InsertAfter(Node* pos, int value) {
+    Node* insert_after(Node* pos, int value) {
         if (pos == nullptr) {
-            PushFront(value);
+            push_front(value);
             return head;
         }
 
@@ -167,9 +167,9 @@ public:
         return n;
     }
 
-    Node* InsertBefore(Node* pos, int value) {
+    Node* insert_before(Node* pos, int value) {
         if (pos == nullptr) {
-            PushBack(value);
+            push_back(value);
             return tail;
         }
 
@@ -190,7 +190,7 @@ public:
         return n;
     }
 
-    void Clear() {
+    void clear() {
         Node* cur = head;
         while (cur != nullptr) {
             Node* t = cur;
@@ -202,8 +202,8 @@ public:
         size = 0;
     }
 
-    void PrintForward() {
-        if (Empty()) {
+    void print_forward() {
+        if (is_empty()) {
             std::cout << "empty" << std::endl;
             return;
         }
@@ -215,8 +215,8 @@ public:
         std::cout << std::endl;
     }
 
-    void PrintBackward() {
-        if (Empty()) {
+    void print_backward() {
+        if (is_empty()) {
             std::cout << "empty" << std::endl;
             return;
         }

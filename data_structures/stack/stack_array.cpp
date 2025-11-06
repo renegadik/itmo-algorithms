@@ -6,7 +6,7 @@ private:
     int top;
     int capacity;
 
-    void Resize(int new_capacity) {
+    void resize(int new_capacity) {
         int* new_data = new int[new_capacity];
         for (int i = 0; i < top; i++)
             new_data[i] = data[i];
@@ -27,37 +27,37 @@ public:
         delete[] data;
     }
 
-    bool Empty() const {
+    bool is_empty() const {
         return top == 0;
     }
 
-    int Size() const {
+    int get_size() const {
         return top;
     }
 
-    void Clear() {
+    void clear() {
         top = 0;
     }
 
-    void Push(int value) {
+    void push(int value) {
         if (top == capacity)
-            Resize(capacity * 2);
+            resize(capacity * 2);
         data[top++] = value;
     }
 
-    void Pop() {
-        if (Empty()) {
+    void pop() {
+        if (is_empty()) {
             std::cerr << "underflow" << std::endl;
             return;
         }
         top--;
         
         if (top > 0 && top < capacity / 4)
-            Resize(capacity / 2);
+            resize(capacity / 2);
     }
 
-    int Peek() const {
-        if (Empty()) {
+    int peek() const {
+        if (is_empty()) {
             std::cerr << "empty" << std::endl;
             return -1;
         }

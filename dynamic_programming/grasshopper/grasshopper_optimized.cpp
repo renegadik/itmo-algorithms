@@ -5,12 +5,11 @@
 int main() {
     int n;
     std::cin >> n;
-    
-    if (n == 0) 
+
+    if (n == 0 || n == 1) {
         std::cout << 1 << std::endl;
-    
-    if (n == 1)
-        std::cout << 1 << std::endl;
+        return 0;
+    }
 
     int64_t prev2 = 1;
     int64_t prev1 = 1;

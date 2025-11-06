@@ -17,18 +17,18 @@ public:
     }
 
     ~SinglyLinkedList() {
-        Clear();
+        clear();
     }
 
-    bool Empty() {
+    bool is_empty() {
         return size == 0;
     }
 
-    int Size() {
+    int get_size() {
         return size;
     }
 
-    Node* Head() {
+    Node* get_head() {
         if (head == nullptr) {
             std::cout << "zero elements" << std::endl;
             return nullptr;
@@ -36,7 +36,7 @@ public:
         return head;
     }
 
-    void PushFront(int value) {
+    void push_front(int value) {
         Node* n = new Node;
         n->value = value;
         n->next = head;
@@ -44,8 +44,8 @@ public:
         size++;
     }
 
-    bool PopFront() {
-        if (Empty()) return false;
+    bool pop_front() {
+        if (is_empty()) return false;
 
         Node* t = head;
         head = head->next;
@@ -54,7 +54,7 @@ public:
         return true;
     }
 
-    Node* Find(int value) {
+    Node* find(int value) {
         Node* cur = head;
         while (cur != nullptr) {
             if (cur->value == value) return cur;
@@ -63,11 +63,11 @@ public:
         return nullptr;
     }
 
-    bool Remove(int value) {
-        if (Empty()) return false;
+    bool remove(int value) {
+        if (is_empty()) return false;
 
         if (head->value == value) {
-            return PopFront();
+            return pop_front();
         }
 
         Node* cur = head;
@@ -84,7 +84,7 @@ public:
         return false;
     }
 
-    void Clear() {
+    void clear() {
         Node* cur = head;
         while (cur != nullptr) {
             Node* t = cur;
@@ -95,8 +95,8 @@ public:
         size = 0;
     }
 
-    void Print() {
-        if (Empty()) {
+    void print() {
+        if (is_empty()) {
             std::cout << "empty" << std::endl;
             return;
         }

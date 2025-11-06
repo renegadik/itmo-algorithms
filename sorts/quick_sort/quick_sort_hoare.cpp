@@ -1,6 +1,6 @@
 #include <utility>
 
-int Partition(int* arr, int left, int right) {
+int partition(int* arr, int left, int right) {
     int pivot = arr[(left + right) / 2];
 
     int i = left;
@@ -23,12 +23,12 @@ int Partition(int* arr, int left, int right) {
     return j;
 }
 
-void QuickSort(int* arr, int left, int right) {
+void quick_sort(int* arr, int left, int right) {
     if (left >= right) return;
 
-    int pivot = Partition(arr, left, right);
-    QuickSort(arr, left, pivot);
-    QuickSort(arr, pivot + 1, right);
+    int pivot = partition(arr, left, right);
+    quick_sort(arr, left, pivot);
+    quick_sort(arr, pivot + 1, right);
 }
 
-// QuickSort(arr, 0, size - 1);
+// quick_sort(arr, 0, size - 1);

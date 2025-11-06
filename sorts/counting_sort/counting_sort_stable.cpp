@@ -1,4 +1,4 @@
-void CountingSort(int* arr, int size) {
+void counting_sort(int* arr, int size) {
     int max_val = arr[0];
     for (int i = 0; i < size; i++) {
         if (arr[i] > max_val) {
@@ -32,4 +32,4 @@ void CountingSort(int* arr, int size) {
     delete[] result_arr;
 }
 
-// CountingSort(arr, size);
+// counting_sort(arr, size);

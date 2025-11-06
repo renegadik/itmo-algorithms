@@ -1,4 +1,4 @@
-void RadixSortMSD(int* arr, int left, int right, int exp) {
+void radix_sort_msd(int* arr, int left, int right, int exp) {
     if (left >= right || exp == 0) return;
 
     int* count = new int[11];
@@ -28,14 +28,14 @@ void RadixSortMSD(int* arr, int left, int right, int exp) {
         int bucket_right = left + count[i + 1] - 1;
 
         if (bucket_left < bucket_right)
-            RadixSortMSD(arr, bucket_left, bucket_right, exp / 10);
+            radix_sort_msd(arr, bucket_left, bucket_right, exp / 10);
     }
 
     delete[] count;
     delete[] buffer;
 }
 
-void RadixSort(int* arr, int size) {
+void radix_sort(int* arr, int size) {
     if (size <= 1) return;
 
     int max_val = arr[0];
@@ -47,7 +47,7 @@ void RadixSort(int* arr, int size) {
     while (max_val / exp >= 10)
         exp *= 10;
 
-    RadixSortMSD(arr, 0, size - 1, exp);
+    radix_sort_msd(arr, 0, size - 1, exp);
 }
 
-// RadixSort(arr, size);
+// radix_sort(arr, size);

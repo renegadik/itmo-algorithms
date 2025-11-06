@@ -1,4 +1,4 @@
-void InsertionSort(int* arr, int size) {
+void insertion_sort(int* arr, int size) {
     for (int i = 1; i < size; i++) {
         int key = arr[i];
         int j = i - 1;
@@ -10,4 +10,4 @@ void InsertionSort(int* arr, int size) {
     }
 }
 
-// InsertionSort(arr, size);
+// insertion_sort(arr, size);

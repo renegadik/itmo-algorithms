@@ -7,7 +7,7 @@ private:
     int size;
     int capacity;
 
-    void Resize(int new_capacity) {
+    void resize(int new_capacity) {
         int* new_data = new int[new_capacity];
         for (int i = 0; i < size; i++)
             new_data[i] = data[i];
@@ -17,7 +17,7 @@ private:
         capacity = new_capacity;
     }
 
-    void SiftUp(int index) {
+    void sift_up(int index) {
         while (index > 0) {
             int parent = (index - 1) / 2;
             if (data[index] < data[parent]) {
@@ -29,7 +29,7 @@ private:
         }
     }
 
-    void SiftDown(int index) {
+    void sift_down(int index) {
         while (true) {
             int left_kid = 2 * index + 1;
             int right_kid = 2 * index + 2;
@@ -60,63 +60,63 @@ public:
         delete[] data;
     }
 
-    bool Empty() {
+    bool is_empty() {
         return size == 0;
     }
 
-    int Size() {
+    int get_size() {
         return size;
     }
 
-    int Top() {
-        if (Empty()) return -1;
+    int get_top() {
+        if (is_empty()) return -1;
         return data[0];
     }
 
-    void Insert(int value) {
+    void insert(int value) {
         if (size == capacity) {
-            Resize(capacity * 2);
+            resize(capacity * 2);
         }
 
         data[size] = value;
-        SiftUp(size++);
+        sift_up(size++);
     }
 
-    int ExtractMin() {
-        if (Empty()) return -1;
+    int extract_min() {
+        if (is_empty()) return -1;
 
         int min = data[0];
         std::swap(data[0], data[--size]);
-        SiftDown(0);
+        sift_down(0);
         return min;
     }
 
-    void Delete(int index) {
+    void remove_at(int index) {
         if (index < 0 || index >= size) return;
 
         std::swap(data[index], data[--size]);
 
         int parent = (index - 1) / 2;
         if (index > 0 && data[index] < data[parent])
-            SiftUp(index);
+            sift_up(index);
         else
-            SiftDown(index);
+            sift_down(index);
     }
 
-    void BuildHeap(int* arr, int n) {
+    void build_heap(int* arr, int n) {
         if (n > capacity)
-            Resize(n);
-        
+            resize(n);
+
         for (int i = 0; i < n; i++)
             data[i] = arr[i];
-        
+
         size = n;
         for (int i = (size - 2) / 2; i >= 0; i--) 
-            SiftDown(i);
+            sift_down(i);
     }
 
-    void Print() {
-        if (Empty()) {
+    void print() {
+        if (is_empty()) {
             std::cout << "empty" << std::endl;
             return;
         }

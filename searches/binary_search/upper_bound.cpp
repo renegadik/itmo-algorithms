@@ -1,6 +1,6 @@
 #include <vector>
 
-int upper_bound(const std::vector<int> &v, int value) {
+int UpperBound(const std::vector<int> &v, int value) {
     int left = 0;
     int right = v.size();
     while (left < right) {

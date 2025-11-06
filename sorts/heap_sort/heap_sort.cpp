@@ -1,6 +1,6 @@
 #include <utility>
 
-void SiftDown(int* heap, int size, int index) {
+void sift_down(int* heap, int size, int index) {
     while (true) {
         int left = 2 * index + 1;
         int right = 2 * index + 2;
@@ -20,18 +20,18 @@ void SiftDown(int* heap, int size, int index) {
     }
 }
 
-void BuildHeap(int* heap, int size) {
+void build_heap(int* heap, int size) {
     for (int i = (size - 2) / 2; i >= 0; --i) 
-        SiftDown(heap, size, i);
+        sift_down(heap, size, i);
 }
 
-void HeapSort(int* arr, int size) {
-    BuildHeap(arr, size);
+void heap_sort(int* arr, int size) {
+    build_heap(arr, size);
 
     for (int end = size - 1; end > 0; --end) {
         std::swap(arr[0], arr[end]);
-        SiftDown(arr, end, 0);
+        sift_down(arr, end, 0);
     }
 }
 
-// HeapSort(arr, size);
+// heap_sort(arr, size);

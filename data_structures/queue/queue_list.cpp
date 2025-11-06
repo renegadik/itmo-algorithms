@@ -6,31 +6,31 @@ private:
     DoublyLinkedList list;
 
 public:
-    bool Empty() {
-        return list.Empty();
+    bool is_empty() {
+        return list.is_empty();
     }
 
-    int Size() {
-        return list.Size();
+    int get_size() {
+        return list.get_size();
     }
 
-    void Push(int value) {
-        list.PushBack(value);
+    void push(int value) {
+        list.push_back(value);
     }
 
-    bool Pop() {
-        return list.PopFront();
+    bool pop() {
+        return list.pop_front();
     }
 
-    int Front() {
-        if (list.Empty()) {
+    int get_front() {
+        if (list.is_empty()) {
             std::cout << "empty" << std::endl;
             return -1;
         }
-        return list.Head()->value;
+        return list.get_head()->value;
     }
 
-    void Clear() {
-        list.Clear();
+    void clear() {
+        list.clear();
     }
 };
