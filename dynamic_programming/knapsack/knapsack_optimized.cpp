@@ -29,10 +29,10 @@ int main() {
         }
     }
 
-    std::reverse(answer.begin(), answer.end());
-
-    for (int i = answer.size() - 1; i >= 0; i--)
+    // print answer
+    for (int i = answer.size() - 1; i >= 0; i--) {
         std::cout << answer[i] << " ";
-
+    }
+    
     std::cout << std::endl;
 }
