@@ -6,9 +6,9 @@ int main() {
     int n;
     std::cin >> n;
 
-    std::vector<int> a(n, 0);
+    std::vector<int> v(n, 0);
     for (int i = 0; i < n; i++) {
-        std::cin >> a[i];
+        std::cin >> v[i];
     }
 
     std::vector<int> dp(n, 1);
@@ -16,7 +16,7 @@ int main() {
 
     for (int i = 1; i < n; i++) {
         for (int j = 0; j < i; j++) {
-            if (a[j] < a[i]) {
+            if (v[j] < v[i]) {
                 if (dp[j] + 1 > dp[i]) {
                     dp[i] = dp[j] + 1;
                     p[i] = j;
@@ -38,7 +38,7 @@ int main() {
     int cur = best_pos;
 
     while (cur != -1) {
-        answer.push_back(a[cur]);
+        answer.push_back(v[cur]);
         cur = p[cur];
     }
 
