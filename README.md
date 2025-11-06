@@ -28,6 +28,7 @@
 - [Knapsack](https://neerc.ifmo.ru/wiki/index.php?title=Задача_о_рюкзаке) — `dynamic_programming/knapsack/`
 - [Grasshopper](https://www.geeksforgeeks.org/dsa/count-ways-reach-nth-stair/) — `dynamic_programming/grasshopper/`
 - [LIS](https://neerc.ifmo.ru/wiki/index.php?title=Задача_о_наибольшей_возрастающей_подпоследовательности) — `dynamic_programming/lis/`
+- [LKS](https://neerc.ifmo.ru/wiki/index.php?title=Задача_о_наибольшей_общей_подпоследовательности) — `dynamic_programming/lks/`
 
 ## Searches
 
