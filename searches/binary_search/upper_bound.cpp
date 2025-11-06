@@ -1,14 +1,15 @@
 #include <vector>
 
-int upper_bound(const std::vector<int> &v, int x) {
+int upper_bound(const std::vector<int> &vector, int value) {
     int left = 0;
-    int right = v.size();
+    int right = vector.size();
     while (left < right) {
         int middle = (left + right) >> 1;
-        if (v[middle] <= x)
+        if (vector[middle] > value) {
             left = middle + 1;
-        else
+        } else {
             right = middle;
+        }
     }
     return left;
 }
