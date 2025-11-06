@@ -3,7 +3,7 @@
 #include <cstdint>
 
 int main() {
-    int n;
+    int n, K;
     std::cin >> n >> K;
     
     std::vector<int64_t> dp(n + 1, 0);
