@@ -34,3 +34,4 @@
 ## Searches
 
 - [Binary Search](https://neerc.ifmo.ru/wiki/index.php?title=Целочисленный_двоичный_поиск) — `searches/binary_search/`
+- [Ternary Search](https://neerc.ifmo.ru/wiki/index.php?title=Троичный_поиск) — `searches/binary_search/`
