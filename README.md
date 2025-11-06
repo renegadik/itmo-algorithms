@@ -29,6 +29,7 @@
 - [Grasshopper](https://www.geeksforgeeks.org/dsa/count-ways-reach-nth-stair/) — `dynamic_programming/grasshopper/`
 - [LIS](https://neerc.ifmo.ru/wiki/index.php?title=Задача_о_наибольшей_возрастающей_подпоследовательности) — `dynamic_programming/lis/`
 - [LKS](https://neerc.ifmo.ru/wiki/index.php?title=Задача_о_наибольшей_общей_подпоследовательности) — `dynamic_programming/lks/`
+- [Wagner-Fisher method](https://neerc.ifmo.ru/wiki/index.php?title=Задача_о_редакционном_расстоянии,_алгоритм_Вагнера-Фишера) — `dynamic_programming/wagner_fisher_method/`
 
 ## Searches
 
