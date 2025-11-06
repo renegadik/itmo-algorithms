@@ -13,31 +13,29 @@ int main() {
 
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= m; j++) {
-            if (s1[i - 1] == s2[j - 1]) {
+            if (s1[i - 1] == s2[j - 1])
                 dp[i][j] = dp[i - 1][j - 1] + 1;
-            } else {
+            else
                 dp[i][j] = std::max(dp[i - 1][j], dp[i][j - 1]);
-            }
         }
     }
 
-    std::vector<char> ans;
+    std::vector<char> lcs;
     int i = n;
     int j = m;
 
     while (i > 0 && j > 0) {
         if (s1[i - 1] == s2[j - 1]) {
-            ans.push_back(s1[i - 1]);
+            lcs.push_back(s1[i - 1]);
             i--;
             j--;
+        } else if (dp[i - 1][j] > dp[i][j - 1]) {
+            i--;
         } else {
-            if (dp[i - 1][j] > dp[i][j - 1])
-                i--;
-            else
-                j--;
+            j--;
         }
     }
 
-    for (int i = ans.size() - 1; i >= 0; i--)
-        std::cout << ans[i];
+    for (int k = lcs.size() - 1; k >= 0; k--)
+        std::cout << lcs[k];
 }
