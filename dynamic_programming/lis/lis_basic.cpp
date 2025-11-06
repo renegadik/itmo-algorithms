@@ -7,9 +7,8 @@ int main() {
     std::cin >> n;
 
     std::vector<int> v(n, 0);
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
         std::cin >> v[i];
-    }
 
     std::vector<int> dp(n, 1);
     std::vector<int> p(n, -1);
@@ -42,8 +41,6 @@ int main() {
         cur = p[cur];
     }
 
-    for (int i = answer.size() - 1; i >= 0; i--) {
+    for (int i = answer.size() - 1; i >= 0; i--)
         std::cout << answer[i] << " ";
-    }
-    std::cout << std::endl;
 }

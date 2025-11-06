@@ -6,15 +6,12 @@ int binary_search(const std::vector<int> &vector, int value) {
     
     while (left <= right) {
         int middle = (left + right) >> 1;
-        if (vector[middle] == value) {
+        if (vector[middle] == value)
             return left;
-        }
-        else if (vector[middle] < value) {
+        else if (vector[middle] < value)
             left = middle + 1;
-        } 
-        else {
+        else
             right = middle - 1;
-        }
     }
     return -1;
 } 
