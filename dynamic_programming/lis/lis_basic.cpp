@@ -6,20 +6,18 @@ int main() {
     int n;
     std::cin >> n;
 
-    std::vector<int> v(n, 0);
+    std::vector<int> v(n);
     for (int i = 0; i < n; i++)
         std::cin >> v[i];
 
     std::vector<int> dp(n, 1);
-    std::vector<int> p(n, -1);
+    std::vector<int> prev(n, -1);
 
     for (int i = 1; i < n; i++) {
         for (int j = 0; j < i; j++) {
-            if (v[j] < v[i]) {
-                if (dp[j] + 1 > dp[i]) {
-                    dp[i] = dp[j] + 1;
-                    p[i] = j;
-                }
+            if (v[j] < v[i] && dp[j] + 1 > dp[i]) {
+                dp[i] = dp[j] + 1;
+                prev[i] = j;
             }
         }
     }
@@ -33,14 +31,14 @@ int main() {
         }
     }
 
-    std::vector<int> answer;
+    std::vector<int> lis;
     int cur = best_pos;
 
     while (cur != -1) {
-        answer.push_back(v[cur]);
-        cur = p[cur];
+        lis.push_back(v[cur]);
+        cur = prev[cur];
     }
 
-    for (int i = answer.size() - 1; i >= 0; i--)
-        std::cout << answer[i] << " ";
+    for (int i = lis.size() - 1; i >= 0; i--)
+        std::cout << lis[i] << " ";
 }
