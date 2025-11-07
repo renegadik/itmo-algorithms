@@ -1,6 +1,6 @@
 #include <vector>
 
-int BinarySearch(const std::vector<int> &vector, int value) {
+int binar_search(const std::vector<int> &vector, int value) {
     int left = 0;
     int right = vector.size() - 1;
     

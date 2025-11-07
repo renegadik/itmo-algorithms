@@ -20,7 +20,7 @@ int main() {
     tail_idx.reserve(n);
 
     for (int i = 0; i < n; ++i) {
-        int pos = LowerBound(tail_val, v[i]);
+        int pos = lower_bound(tail_val, v[i]);
 
         if (pos == tail_val.size()) {
             tail_val.push_back(v[i]);
