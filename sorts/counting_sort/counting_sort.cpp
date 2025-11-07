@@ -1,11 +1,11 @@
 void counting_sort(int* arr, int size) {
-    int max_val = arr[0];
-    for (int i = 0; i < size; i++) {
-        if (arr[i] > max_val)
-            max_val = arr[i];
+    int max = arr[0];
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > max)
+            max = arr[i];
     }
 
-    int range = max_val + 1;
+    int range = max + 1;
     int* count = new int[range]{};
 
     for (int i = 0; i < size; i++) 
