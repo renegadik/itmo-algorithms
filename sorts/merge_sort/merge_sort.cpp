@@ -28,7 +28,7 @@ void merge(int* arr, int left, int pivot, int right) {
 void merge_sort(int* arr, int left, int right) {
     if (right - left <= 1) return;
     
-    int pivot = left + (right - left) / 2;
+    int pivot = (right + left) / 2;
     merge_sort(arr, left, pivot);
     merge_sort(arr, pivot, right);
 
