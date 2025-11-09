@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 
-#include "../searches/binary_search/lower_bound.cpp";
+#include "../../searches/binary_search/lower_bound.cpp";
 
 int main() {
     int n;
