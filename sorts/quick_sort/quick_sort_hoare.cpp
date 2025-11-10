@@ -6,18 +6,19 @@ int partition(int* arr, int left, int right) {
     int i = left;
     int j = right;
 
-    while (i <= j) {
+    while (true) {
         while (arr[i] < pivot) 
             i++;
         
         while (arr[j] > pivot) 
             j--;
 
-        if (i <= j) {
-            std::swap(arr[i], arr[j]);
-            i++;
-            j--;
-        }
+        if (j <= i)
+            return j;
+        
+        std::swap(arr[i], arr[j]);
+        i++;
+        j--;
     }
 
     return j;
